@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/@assemblyscript/loader/umd/index.js"></script>
+    <script src="/js/loader.js"></script>
+    <script>
+      const WL = new WasmLoader();
+      WL.wasm("/build/release.wasm").then((instance) => {
+        const { fizzbuzz, __getString } = instance;
+        const str = __getString(fizzbuzz(3));
+        document.write(str);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

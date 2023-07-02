@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="/js/loader.js"></script>
+    <script>
+      const WL = new WasmLoader();
+      WL.wasm("/build/release.wasm").then((instance) => {
+        const { minusOne } = instance;
+        document.write(minusOne(44));
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
